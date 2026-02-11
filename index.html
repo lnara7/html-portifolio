@@ -1,40 +1,153 @@
-<!-- TODO 1: Create the HTML Boilerplate -->
- <!doctype html>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portifólio</title>
-  <meta name="description" content="Descrição da página">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        /* Reset e Variáveis */
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        
+        /* Container */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        header { background: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-weight: 500; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 60px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.25rem; color: var(--gray); margin-bottom: 2rem; }
+        .btn { padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+
+        /* Sections */
+        section { padding: 80px 0; }
+        h2 { text-align: center; margin-bottom: 3rem; font-size: 2rem; }
+
+        /* Skills Grid */
+        .skills-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .skill-tag { background: white; padding: 10px 20px; border-radius: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-weight: 600; }
+
+        /* Projects Grid */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card-img { height: 200px; background-color: #ddd; display: flex; align-items: center; justify-content: center; color: #888; }
+        .card-content { padding: 20px; }
+        .card h3 { margin-bottom: 10px; }
+        .card p { color: var(--gray); font-size: 0.9rem; margin-bottom: 15px; }
+        .card-link { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+
+        /* Footer */
+        footer { background: var(--dark); color: white; text-align: center; padding: 2rem 0; margin-top: auto; }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* Em um projeto real, adicionar menu hambúrguer */
+        }
+    </style>
 </head>
 <body>
 
-  <h1>Leonardo's Portifolio</h1>
-  <h2>I'm a Web Developrer</h2>
-<hr />
-  <a href="/public/movie-ranking.html">Movie Ranking Project</a>
-  <br>
-  <img src="./assets/images/movie-ranking.png" width="400"/>
-  <script src="script.js"></script>
-  <br>
-  <a href="./public/birthday-invite.html">Birthday Invite Project</a>
-  <br>
-  <img src="./assets/images/birthday-invite.png" width="400"/>
-  <script src="script.js"></script>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">DevPortfolio</a>
+                <div class="nav-links">
+<!--                     <a href="#sobre">Sobre</a> -->
+                    <a href="#habilidades">Habilidades</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#contato">Contato</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <img src="./Foto de perfil.png" height="200vh">
+            <h1>Olá, eu sou Leonardo</h1>
+            <p>Desenvolvedor Full Stack | Python & Web Solutions | Photoshop</p>
+            <a href="#projetos" class="btn btn-primary">Ver meus projetos</a>
+        </div>
+    </section>
+
+    <section id="habilidades" style="background-color: #e2e8f0;">
+        <div class="container">
+            <h2>Minhas Habilidades</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Photoshop</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Google Apps Script</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">HTML5 & CSS3</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos">
+        <div class="container">
+            <h2>Projetos Recentes</h2>
+            <div class="projects-grid">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="./Project 01.png" height="100%" width="auto-fit">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sistema de Login</h3>
+                        <p>Aplicação web segura com autenticação de usuários desenvolvida em Google Apps Scripts.</p>
+                        <a href="https://script.google.com/macros/s/AKfycbw5eCM1fKp4k4I5ZIl1FVigoeR9HgESKvYuveUEy4SdPwPWnXK5rkYew-11MGhigu4ETQ/exec" class="card-link">Ver app da web &rarr;</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="./Photoshop My Place.jpeg" height="100%" width="auto-fit">
+                    </div>
+                    <div class="card-content">
+                        <h3>Quadro de avisos para o Condomínio My Place Benfica</h3>
+                        <p>Melhorei a imagem original usando o Photoshop a fim de que o quadro de avisos ficasse mais explicativo e fácil de se entender.</p>
+                        <p><a href="https://drive.google.com/file/d/1x8m48P2_7Ja-Kez5CF2GLuInpz-uSh_8/view?usp=sharing" class="card-link">Ver design original &rarr;</a></p>
+                        <p><a href="https://drive.google.com/file/d/1cAynqX9vLLv9fUhKqqPda6Ct0gBbiNx9/view?usp=sharing" class="card-link">Ver design editado por mim &rarr;</a></p>
+                    </div>
+                </div><div class="card">
+                    <div class="card-img">
+                        <img src="./Modelo de hotel.png" height="100%" width="auto-fit">
+                    </div>
+                    <div class="card-content">
+                        <h3>Design modelo de site para um hotel</h3>
+                        <p>Fiz esse design durante um curso que estava fazendo</p>
+                        <p><a href="https://www.canva.com/design/DAHA2FHXPf0/yiRCTeT1huD54ov3fq_S1g/view?utm_content=DAHA2FHXPf0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9636c86f8e#3" class="card-link">Ver design &rarr;</a></P>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container">
+            <p>&copy; 2026, Leonardo. Todos os direitos reservados.</p>
+            <p>leonardodealbuquerque2@gmail.com</p>
+            <p>(85) 9 9998-5015</p>
+            <p>Fortaleza, CE</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 </body>
 </html>
-
-<!-- TODO 2: Add Your previous projects' HTML into the public folder -->
-
-<!-- TODO 3: Take screenshots of your project previews and add the images to the images folder -->
-
-<!-- TODO 4: Add titles/subtitles etc. -->
-
-<!-- TODO 5: Add a link to the project pages -->
-
-<!-- TODO 6: Add images to show the project previews
-HINT for TODO 6: You can use the height attribute set to 200 to make the image smaller:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-height -->
-
-<!-- TODO 7: Add the Contact Me and About Me page links -->
